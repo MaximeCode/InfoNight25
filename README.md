@@ -1,3 +1,9 @@
+# Infonight Event 2025
+
+Our project created during the "Nuit de l'info 2025" event in France. It's a national event where teams, composed by students, develop an app which complete several challenges chose at the start of the night. We have been from thursday, december 4th at 4h30pm to friday, december 5th at 8h30am to create this app with @LeBaptouBaptiste
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
