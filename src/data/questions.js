@@ -104,9 +104,9 @@ export const questions = [
         text: "Le wifi rame dans ton lycée. Ta solution ?",
         category: "Autonomie",
         options: [
-            { label: "Je peste contre l’admin réseau.", score: 0 },
             { label: "Je change de borne si j’en trouve une meilleure.", score: 5 },
             { label: "Je propose un audit réseau collaboratif (club info).", score: 10 },
+            { label: "Je peste contre l’admin réseau.", score: 0 },
         ],
     },
     {

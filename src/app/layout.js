@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${outfit.variable} ${spaceMono.variable} antialiased bg-nird-dark text-nird-light overflow-x-hidden`}
       >
-        <CrtEffect />
         {children}
       </body>
     </html>

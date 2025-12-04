@@ -65,7 +65,7 @@ export function Hero() {
 
         <div className="pt-8">
           <Link href="/test">
-            <Button variant="start" size="lg" className="text-2xl">
+            <Button variant="start" size="lg" className="text-2xl hover:cursor-pointer">
               Lancer le Test
             </Button>
           </Link>
