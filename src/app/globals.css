@@ -1,103 +1,115 @@
 @import "tailwindcss";
 
 @theme {
-  --color-nird-green: #10b981;
-  --color-nird-gold: #f59e0b;
-  --color-nird-brown: #92400e;
-  --color-nird-neon: #06b6d4;
-  --color-nird-dark: #0f172a;
-  --color-nird-light: #f1f5f9;
+	--color-nird-green: #10b981;
+	--color-nird-gold: #f59e0b;
+	--color-nird-brown: #92400e;
+	--color-nird-neon: #06b6d4;
+	--color-nird-dark: #0f172a;
+	--color-nird-light: #f1f5f9;
 
-  --font-sans: var(--font-outfit);
-  --font-mono: var(--font-space-mono);
+	--font-sans: var(--font-outfit);
+	--font-mono: var(--font-space-mono);
 }
 
 :root {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
+	--background: #0f172a;
+	--foreground: #f1f5f9;
 }
 
 body {
-  color: var(--foreground);
-  font-family: var(--font-sans);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+	touch-action: manipulation;
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+	animation: float 3s ease-in-out infinite;
 }
 
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(15, 23, 42, 0.6);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @keyframes flicker {
-  0% {
-    opacity: 0.02;
-  }
-  5% {
-    opacity: 0.05;
-  }
-  10% {
-    opacity: 0.02;
-  }
-  15% {
-    opacity: 0.06;
-  }
-  20% {
-    opacity: 0.02;
-  }
-  50% {
-    opacity: 0.02;
-  }
-  55% {
-    opacity: 0.05;
-  }
-  60% {
-    opacity: 0.02;
-  }
-  100% {
-    opacity: 0.02;
-  }
+	0% {
+		opacity: 0.02;
+	}
+	5% {
+		opacity: 0.05;
+	}
+	10% {
+		opacity: 0.02;
+	}
+	15% {
+		opacity: 0.06;
+	}
+	20% {
+		opacity: 0.02;
+	}
+	50% {
+		opacity: 0.02;
+	}
+	55% {
+		opacity: 0.05;
+	}
+	60% {
+		opacity: 0.02;
+	}
+	100% {
+		opacity: 0.02;
+	}
 }
 
 .animate-flicker {
-  animation: flicker 0.15s infinite;
+	animation: flicker 0.15s infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .animate-spin-slow {
-  animation: spin 8s linear infinite;
+	animation: spin 8s linear infinite;
 }
 
 .perspective-grid {
-  background-image: 
-    linear-gradient(to right, rgba(76, 29, 149, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(76, 29, 149, 0.3) 1px, transparent 1px);
-  background-size: 40px 40px;
-  transform: perspective(500px) rotateX(60deg);
-  transform-origin: center top;
-  animation: grid-scroll 2s linear infinite;
+	background-image: linear-gradient(
+			to right,
+			rgba(76, 29, 149, 0.3) 1px,
+			transparent 1px
+		),
+		linear-gradient(to bottom, rgba(76, 29, 149, 0.3) 1px, transparent 1px);
+	background-size: 40px 40px;
+	transform: perspective(500px) rotateX(60deg);
+	transform-origin: center top;
+	animation: grid-scroll 2s linear infinite;
 }
 
 @keyframes grid-scroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 40px; }
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 40px;
+	}
 }

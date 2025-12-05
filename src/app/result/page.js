@@ -92,10 +92,12 @@ function ResultContent() {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="relative group"
+                        className="relative group w-full flex justify-center py-4 overflow-hidden"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-nird-gold to-nird-neon rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                        <IdCard ref={cardRef} results={results} username={username} theme={theme} />
+                        <div className="scale-[0.55] sm:scale-75 md:scale-100 origin-center transition-transform duration-300">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-nird-gold to-nird-neon rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                            <IdCard ref={cardRef} results={results} username={username} theme={theme} />
+                        </div>
                     </motion.div>
 
                     <div className="flex flex-col gap-4 w-full max-w-md">
