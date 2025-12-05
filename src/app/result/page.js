@@ -10,6 +10,7 @@ import { PseudoModal } from "@/components/game/PseudoModal";
 import { toPng } from "html-to-image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { GoBackButton } from "@/components/ui/GoBackButton";
 
 function ResultContent() {
     const searchParams = useSearchParams();
@@ -75,8 +76,8 @@ function ResultContent() {
                             key={t}
                             onClick={() => setTheme(t)}
                             className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${theme === t
-                                    ? 'bg-nird-gold text-black shadow-[0_0_15px_rgba(234,179,8,0.5)]'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-nird-gold text-black shadow-[0_0_15px_rgba(234,179,8,0.5)]'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             {t.charAt(0).toUpperCase() + t.slice(1)}
@@ -110,10 +111,13 @@ function ResultContent() {
     );
 }
 
+
+
 export default function ResultPage() {
     return (
         <main className="min-h-screen relative">
             <Background />
+            <GoBackButton href="/" />
             <Suspense fallback={<div className="text-white text-center pt-20">Chargement...</div>}>
                 <ResultContent />
             </Suspense>

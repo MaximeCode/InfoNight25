@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Background } from "@/components/ui/Background";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { QuestionCard } from "@/components/game/QuestionCard";
+import { GoBackButton } from "@/components/ui/GoBackButton";
 import { questions } from "@/data/questions";
 import { AnimatePresence } from "framer-motion";
 
@@ -82,6 +83,7 @@ export default function TestPage() {
     return (
         <main className="min-h-screen relative flex flex-col items-center justify-center p-4">
             <Background />
+            <GoBackButton href="/" />
 
             <div className="w-full max-w-xl mb-8 space-y-2">
                 <div className="flex justify-between text-nird-light text-sm font-mono">
