@@ -112,9 +112,9 @@ function ResultContent() {
                         <Button
                             variant="ghost"
                             onClick={() => setShowEmailModal(true)}
-                            className="w-full text-nird-light/50 hover:text-nird-neon text-xs"
+                            className="w-full text-emerald-900/90 hover:text-emerald-950 text-xs bg-gradient-to-r from-emerald-500 to-emerald-500"
                         >
-                            Envoyer par mail (Secure)
+                            Envoyer par mail
                         </Button>
                     </div>
                 </div>
