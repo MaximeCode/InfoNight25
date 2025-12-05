@@ -1,32 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-nird-green: #10B981;
-  --color-nird-gold: #F59E0B;
-  --color-nird-brown: #92400E;
-  --color-nird-neon: #06B6D4;
-  --color-nird-dark: #0F172A;
-  --color-nird-light: #F1F5F9;
-  
+  --color-nird-green: #10b981;
+  --color-nird-gold: #f59e0b;
+  --color-nird-brown: #92400e;
+  --color-nird-neon: #06b6d4;
+  --color-nird-dark: #0f172a;
+  --color-nird-light: #f1f5f9;
+
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-space-mono);
 }
 
 :root {
-  --background: #0F172A;
-  --foreground: #F1F5F9;
+  --background: #0f172a;
+  --foreground: #f1f5f9;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
@@ -40,15 +45,33 @@ body {
 }
 
 @keyframes flicker {
-  0% { opacity: 0.02; }
-  5% { opacity: 0.05; }
-  10% { opacity: 0.02; }
-  15% { opacity: 0.06; }
-  20% { opacity: 0.02; }
-  50% { opacity: 0.02; }
-  55% { opacity: 0.05; }
-  60% { opacity: 0.02; }
-  100% { opacity: 0.02; }
+  0% {
+    opacity: 0.02;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.02;
+  }
+  15% {
+    opacity: 0.06;
+  }
+  20% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.02;
+  }
+  55% {
+    opacity: 0.05;
+  }
+  60% {
+    opacity: 0.02;
+  }
+  100% {
+    opacity: 0.02;
+  }
 }
 
 .animate-flicker {

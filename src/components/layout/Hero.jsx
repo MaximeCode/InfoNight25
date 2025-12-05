@@ -1,94 +1,130 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Icons } from "@/components/icons/Icons";
 import Link from "next/link";
+import { Sprout, Shield, Users, Bold, PlayCircle } from "lucide-react";
+import { Card } from "@/components/ui/Card";
+import { MessageSquareMore } from "lucide-react";
+import { Chatbot } from "@/components/Chatbot";
 
 export function Hero() {
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden">
-      {/* Floating Elements (The "Village") */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-[10%] text-nird-green opacity-20"
-        >
-          <Icons.Shield className="w-24 h-24" />
-        </motion.div>
-        <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-40 right-[10%] text-nird-gold opacity-20"
-        >
-          <Icons.Gear className="w-32 h-32" />
-        </motion.div>
-        <motion.div
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-40 right-[20%] text-nird-neon opacity-10"
-        >
-          <Icons.Spark className="w-16 h-16" />
-        </motion.div>
-      </motion.div>
+    <>
+      {/* Hero Section */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="text-center max-w-3xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm">
+            <Shield className="size-4" />
+            <span>Construire la Résilience Numérique</span>
+          </div>
 
-      {/* Main Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-10 max-w-4xl mx-auto space-y-8"
-      >
-        <div className="inline-block mb-4">
-          <span className="px-4 py-2 rounded-full bg-nird-green/10 text-nird-green border border-nird-green/50 text-sm font-mono uppercase tracking-widest animate-pulse">
-            Nuit de l'Info 2025
-          </span>
-        </div>
+          <h1 className="text-5xl text-emerald-950">
+            Le Village Numérique Résistant
+          </h1>
 
-        <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-nird-green via-nird-light to-nird-neon drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]">
-          VILLAGE RÉSISTANT
-        </h1>
+          <p className="text-xl text-slate-600">
+            Comment les écoles peuvent-elles résister aux géants de la
+            technologie ?
+          </p>
 
-        <p className="text-xl md:text-2xl text-nird-light/80 max-w-2xl mx-auto font-light">
-          Face à l'empire des Big Tech, un petit village d'irréductibles résiste encore et toujours.
-          <br />
-          <span className="text-nird-gold font-bold mt-2 block">
-            Quel est ton niveau de résistance ?
-          </span>
-        </p>
+          <div className="text-slate-600 max-w-2xl mx-auto">
+            <p>
+              À une époque de domination numérique par les Big Tech, les
+              établissements d&apos;enseignement ont le pouvoir de créer des
+              écosystèmes technologiques durables, inclusifs et responsables.
+            </p>
+            <p className="font-bold mt-4">
+              Êtes-vous prêt à devenir un héros du numérique ?
+            </p>
+          </div>
 
-        <div className="pt-8">
-          <Link href="/test">
-            <Button variant="start" size="lg" className="text-2xl hover:cursor-pointer">
-              Lancer le Test
+          <div className="flex gap-4 justify-center pt-4">
+            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8">
+              <Link href="/test">Commencer le test</Link>
             </Button>
-          </Link>
+            {/* <Button
+              variant="outline"
+              className="border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+            >
+              En Savoir Plus
+            </Button> */}
+          </div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Characters / Roles Preview */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-nird-dark to-transparent flex items-end justify-center gap-8 pb-8"
-      >
-        {["🐧", "🛡️", "🔧", "🌿"].map((emoji, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ y: -10, scale: 1.2 }}
-            className="text-4xl cursor-pointer filter drop-shadow-lg"
+      {/* Core Values */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-8 transition-all duration-300">
+          <Card className="p-6 border-emerald-200 bg-white hover:shadow-lg transition-all hover:scale-105 hover:border-emerald-600">
+            <div className="size-12 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
+              <Users className="size-6 text-emerald-600" />
+            </div>
+            <h3 className="text-emerald-900 mb-2">Inclusif</h3>
+            <p className="text-slate-600 text-sm">
+              Une technologie qui donne du pouvoir à tous les élèves, éducateurs
+              et communautés, indépendamment de leur origine ou de leurs
+              ressources.
+            </p>
+          </Card>
+
+          <Card className="p-6 border-emerald-200 bg-white hover:shadow-lg transition-all hover:scale-105 hover:border-emerald-600">
+            <div className="size-12 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
+              <Shield className="size-6 text-emerald-600" />
+            </div>
+            <h3 className="text-emerald-900 mb-2">Responsable</h3>
+            <p className="text-slate-600 text-sm">
+              Des pratiques éthiques qui protègent la vie privée, les données et
+              le bien-être numérique des élèves dans les environnements
+              éducatifs.
+            </p>
+          </Card>
+
+          <Card className="p-6 border-emerald-200 bg-white hover:shadow-lg transition-all hover:scale-105 hover:border-emerald-600">
+            <div className="size-12 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
+              <Sprout className="size-6 text-emerald-600" />
+            </div>
+            <h3 className="text-emerald-900 mb-2">Durable</h3>
+            <p className="text-slate-600 text-sm">
+              Des solutions à long terme qui respectent l&apos;écologie
+              numérique et minimisent l&apos;impact environnemental et social.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      {/* ChatBot */}
+      <section className="text-center mx-auto w-3/4 px-6 py-16">
+        <h2
+          className="text-3xl font-bold text-emerald-900 mb-4 inline-flex items-center justify-center gap-3"
+          title="Défi #1 - Chat'bruti"
+        >
+          ChatBot <MessageSquareMore />
+        </h2>
+        <div className="text-slate-600 text-sm mb-4">
+          <p>
+            ChatBot est un assistant virtuel qui peut répondre à vos questions
+            et vous aider à devenir un héros du numérique.
+          </p>
+          <p className="font-bold">
+            Sachez qu&apos;il sera toujours là en cas de besoin ! 😉
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <Button
+            onClick={() => setIsChatbotOpen(true)}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8"
           >
-            {emoji}
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+            J&apos;ai besoin de précieux conseils 🙏
+          </Button>
+        </div>
+      </section>
+
+      {/* Chatbot Component */}
+      <Chatbot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
+    </>
   );
 }

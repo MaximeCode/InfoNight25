@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${outfit.variable} ${spaceMono.variable} antialiased bg-nird-dark text-nird-light overflow-x-hidden`}
+        className={`${outfit.variable} ${spaceMono.variable} antialiased text-nird-light overflow-x-hidden`}
       >
         {children}
       </body>
