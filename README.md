@@ -51,7 +51,7 @@ Maxime
 - [contact.mbaude@gmail.com]("mailto:contact.mbaude@gmail.com")
 
 Baptiste
-- [LinkedIn](["https://](https://www.linkedin.com/in/baptistevidal/)")
+- [LinkedIn](https://www.linkedin.com/in/baptistevidal/)
 - [baptiste.vidal.2005@gmail.com]("mailto:baptiste.vidal.2005@gmail.com")
 
 ---
