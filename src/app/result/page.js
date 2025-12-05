@@ -4,13 +4,13 @@ import { Suspense, useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Background } from "@/components/ui/Background";
 import { Button } from "@/components/ui/Button";
-import { ResultGauge } from "@/components/game/ResultGauge";
 import { IdCard } from "@/components/game/IdCard";
 import { PseudoModal } from "@/components/game/PseudoModal";
+import { ChaosEmailModal } from "@/components/game/ChaosEmailModal";
+import { GoBackButton } from "@/components/ui/GoBackButton";
 import { toPng } from "html-to-image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { GoBackButton } from "@/components/ui/GoBackButton";
 
 function ResultContent() {
     const searchParams = useSearchParams();
@@ -35,6 +35,7 @@ function ResultContent() {
     const [username, setUsername] = useState("Agent Anonyme");
     const [showModal, setShowModal] = useState(true);
     const [theme, setTheme] = useState("retro");
+    const [showEmailModal, setShowEmailModal] = useState(false);
 
     const downloadCard = async () => {
         if (cardRef.current === null) {
@@ -97,21 +98,29 @@ function ResultContent() {
                         <IdCard ref={cardRef} results={results} username={username} theme={theme} />
                     </motion.div>
 
-                    <div className="flex gap-4">
-                        <Button onClick={downloadCard} disabled={isGenerating} variant="secondary">
-                            {isGenerating ? "Génération..." : "Télécharger ma Carte"}
+                    <div className="flex flex-col gap-4 w-full max-w-md">
+                        <div className="flex gap-4 w-full">
+                            <Button onClick={downloadCard} disabled={isGenerating} variant="secondary" className="flex-1">
+                                {isGenerating ? "Génération..." : "Télécharger ma Carte"}
+                            </Button>
+                            <Link href="/test">
+                                <Button variant="outline">Recommencer</Button>
+                            </Link>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            onClick={() => setShowEmailModal(true)}
+                            className="w-full text-nird-light/50 hover:text-nird-neon text-xs"
+                        >
+                            Envoyer par mail (Secure)
                         </Button>
-                        <Link href="/test">
-                            <Button variant="outline">Recommencer</Button>
-                        </Link>
                     </div>
                 </div>
             </div>
+            <ChaosEmailModal isOpen={showEmailModal} onClose={() => setShowEmailModal(false)} />
         </div>
     );
 }
-
-
 
 export default function ResultPage() {
     return (
