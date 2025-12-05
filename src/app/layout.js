@@ -1,6 +1,5 @@
 import { Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
-import { CrtEffect } from "@/components/ui/CrtEffect";
 
 const outfit = Outfit({
   variable: "--font-outfit",
