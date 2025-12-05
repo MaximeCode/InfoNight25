@@ -44,7 +44,7 @@ export function Hero() {
 
           <div className="flex gap-4 justify-center pt-4">
             <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8">
-              Commencer le test
+              <Link href="/test">Commencer le test</Link>
             </Button>
             {/* <Button
               variant="outline"
