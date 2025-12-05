@@ -64,7 +64,7 @@ export const IdCard = forwardRef(
 			<div
 				ref={ref}
 				className={clsx(
-					"w-[600px] h-[350px] rounded-xl relative overflow-hidden flex",
+					"w-[600px] h-[380px] rounded-xl relative overflow-hidden flex",
 					t.container
 				)}
 			>
@@ -143,7 +143,7 @@ export const IdCard = forwardRef(
 						/>
 					</div>
 
-					<div className="flex-1 flex items-center justify-center -ml-4 max-h-[200px]">
+					<div className="flex-1 flex items-center justify-center -ml-4 max-h-[200px] mt-4">
 						<CategoryRadar
 							scores={categories}
 							theme={theme}
@@ -151,7 +151,7 @@ export const IdCard = forwardRef(
 						/>
 					</div>
 
-					<div className="flex justify-between items-end mt-2">
+					<div className="flex justify-between items-end mt-5">
 						<div className={clsx("text-[10px] max-w-[200px]", t.textMuted)}>
 							Certifié conforme Nuit de l'Info 2025.
 							<br />
@@ -162,7 +162,7 @@ export const IdCard = forwardRef(
 						<div className="bg-white p-1 rounded-sm">
 							<QRCode
 								value="https://nuit-info-2025.speakzy.fr/test"
-								size={40}
+								size={50}
 								style={{ height: "auto", maxWidth: "100%", width: "100%" }}
 								viewBox={`0 0 256 256`}
 							/>

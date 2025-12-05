@@ -114,7 +114,7 @@ function ResultContent() {
                             onClick={() => setShowEmailModal(true)}
                             className="w-full text-nird-light/50 hover:text-nird-neon text-xs"
                         >
-                            Envoyer par mail (Secure)
+                            Envoyer par mail
                         </Button>
                     </div>
                 </div>
