@@ -232,15 +232,6 @@ L'application a été optimisée pour mobile :
 
 ---
 
-## 🔮 9. Améliorations Futures
-
-- [ ] Ajouter un leaderboard global via une base de données.
-- [ ] Plus de mini-jeux pour chaque catégorie NIRD.
-- [ ] Mode multijoueur pour le Snake.
-- [ ] Traduction anglaise complète.
-
----
-
 ## 📜 10. Licence
 
 Ce projet est sous licence **MIT**. Vous êtes libres de le réutiliser, de le modifier et de le partager, tant que vous citez les auteurs originaux.
