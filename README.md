@@ -14,11 +14,11 @@ Une application web immersive, ludique et interactive développée entre le couc
 
 ### Contexte : Nuit de l'Info 2025
 
-Ce projet a été réalisé dans le cadre de la **Nuit de l'Info 2025**, un hackathon national où des équipes d'étudiants s'affrontent pour développer une application web du coucher au lever du soleil (4 au 5 décembre 2025).
+Ce projet a été réalisé dans le cadre de la **Nuit de l'Info 2025**, un concours national où des équipes d'étudiants s'affrontent pour développer une application web du coucher au lever du soleil (4 au 5 décembre 2025).
 
-### Concept : Le NIRD Purity Test
+### Concept : Le NIRD Test de pureté
 
-Notre réponse au sujet prend la forme d'un **"Purity Test" numérique**.
+Notre réponse au sujet prend la forme d'un **"Test de pureté" numérique**.
 Plutôt que de faire la morale aux utilisateurs, nous les invitons à tester leur niveau de "résistance" face aux GAFAM et aux mauvaises pratiques numériques.
 
 L'application propose :
@@ -26,7 +26,7 @@ L'application propose :
 - Un **diagnostic ludique** sur 6 axes du numérique responsable.
 - Une **Carte d'Identité de Résistant** générée dynamiquement.
 - Des **mini-jeux cachés** et des défis UX décalés.
-- Une ambiance **Cyberpunk / Synthwave** pour rendre le sujet attractif.
+- Une ambiance **Retro / Synthwave** pour rendre le sujet attractif.
 
 ### Philosophie NIRD
 
@@ -41,14 +41,24 @@ L'objectif est de sensibiliser sur l'obsolescence programmée, la souveraineté 
 
 Des développeurs passionnés qui ont troqué leur sommeil contre du code (et beaucoup de café).
 
-- **Développement Fullstack** : Architecture Next.js, Logique de jeu, Intégration.
+- **Développement Fullstack** : Architecture Next.js, Logique de jeu, Gestion de données, Intégration.
 - **Design & UI** : Charte graphique Synthwave, Animations, Responsive Design.
+
+### Pour nous contacter
+
+Maxime
+- [LinkedIn](https://www.linkedin.com/in/maximebaude/)
+- [contact.mbaude@gmail.com]("mailto:contact.mbaude@gmail.com")
+
+Baptiste
+- [LinkedIn]("https://")
+- [baptiste.vidal.2005@gmail.com]("mailto:baptiste.vidal.2005@gmail.com")
 
 ---
 
 ## 🎮 3. Fonctionnalités
 
-### 🛡️ NIRD Purity Test
+### 🛡️ NIRD Test de pureté
 
 Le cœur de l'application. Une série de 15 questions réparties en 6 catégories :
 
@@ -63,8 +73,8 @@ Le cœur de l'application. Une série de 15 questions réparties en 6 catégorie
 
 À la fin du test, l'utilisateur reçoit une "Carte de Résistant" unique :
 
-- **Score Global & Rank** (Novice, Apprenti, Villageois, Héros).
-- **Radar Chart** détaillant les forces et faiblesses.
+- **Score Global & Rang** (Novice, Apprenti, Villageois, Héros).
+- **Graphique Radar** détaillant les forces et faiblesses.
 - **QR Code** de validation.
 - **Export PNG** haute définition.
 
@@ -72,20 +82,19 @@ Le cœur de l'application. Une série de 15 questions réparties en 6 catégorie
 
 L'application change radicalement d'ambiance selon le thème choisi :
 
-- **Retro (Défaut)** : Ambiance Synthwave, néons cyan/magenta, polices pixel/mono.
+- **Retro (Défaut)** : Ambiance Synthwave, néons cyan/magenta, polices pixel/mono. [`Challenge "On veut du gros pixel !"`]
 - **Dark** : Mode sombre sobre, vert "Matrix", haute lisibilité.
 - **Light** : Mode clair, épuré, style "Corporatif".
 
-### 🤖 Chatbot "Chat'bruti"
+### 🤖 Chatbot [`Challenge "Chat'bruti"`]
 
 Un assistant virtuel volontairement absurde avec 3 personnalités :
 
 - **Professeur Trucmuche** : Pseudo-intellectuel à côté de la plaque.
 - **Madame Irma 2.0** : Voyante numérique déjantée.
 - **Dr. Hors-Sujet** : Diagnostics médicaux basés sur la météo.
-  _Note : Il répond à des commandes secrètes comme `sudo snake`._
 
-### 🖱️ Challenge "Donald Norman à l'envers"
+### 🖱️ Authentification originale [`Challenge "Sésame ouvre toi"`]
 
 Un champ de saisie anti-ergonomique (sur la page d'accueil) :
 
@@ -93,19 +102,19 @@ Un champ de saisie anti-ergonomique (sur la page d'accueil) :
 - Il se pilote comme un vaisseau spatial (Rotation + Boost).
 - Il faut stabiliser le curseur sur une cible pour déverrouiller l'accès.
 
-### 🐍 Easter Egg : Snake.exe
+### 🐍 Easter Egg : Snake.exe [`Challenge "Snake caché"`]
 
 Caché dans l'application !
 
-- **Comment l'activer ?** Entrez le pseudo `sudo snake` lors de la génération de la carte, ou via le Chatbot.
+- **Comment l'activer ?** Entrez le pseudo `sudo snake` lors de la génération de la carte.
 - Un Snake complet style "Retro Terminal".
-- **Malus Windows** : Manger le logo Windows fait perdre des points et rétrécir le serpent.
-- **Bonus Linux** : Manger le pingouin Tux donne un boost de vitesse et de score.
+   - **Malus Windows** : Manger le logo Windows fait perdre des points et rétrécir le serpent.
+   - **Bonus Linux** : Manger le pingouin Tux donne un boost de vitesse et de score.
 - **Mobile** : Contrôles tactiles dédiés sur téléphone.
 
-### 🌌 Chaos Email (Gravity Keyboard)
+### 🌌 Chaos Email (Gravity Keyboard) [`Challenge "L'ergonomie : simplifier pour mieux vivre"`]
 
-Pour envoyer son résultat par mail, l'utilisateur doit "attraper" les lettres qui flottent en apesanteur et rebondissent un peu partout. Un cauchemar UX assumé !
+Pour 'envoyer' son résultat par mail, l'utilisateur doit "attraper" les lettres qui flottent en apesanteur et rebondissent un peu partout. Un cauchemar UX assumé !
 
 ---
 
@@ -125,6 +134,8 @@ Pour envoyer son résultat par mail, l'utilisateur doit "attraper" les lettres q
 ```bash
 src/
 ├── app/                 # Pages et Routing (App Router)
+│   ├── api/chat         # API
+│   │     └── route.js   # Route de l'api
 │   ├── layout.js        # Layout global (fontes, meta)
 │   ├── page.js          # Accueil (Hero + Cursor Challenge)
 │   ├── test/            # Page du Quiz
@@ -154,7 +165,7 @@ Les scores sont calculés via un hook d'état local qui accumule les points par 
 
 ### Prérequis
 
-- Node.js 18+
+- Node.js 20+
 - npm, yarn, ou pnpm
 
 ### Installation
@@ -205,12 +216,12 @@ npm start
 
 | Défi                | Implémentation                                                                        |
 | :------------------ | :------------------------------------------------------------------------------------ |
-| **Purity Test**     | Système complet de quiz avec pondération par catégorie et radar chart.                |
+| **Test de pureté**     | Système complet de quiz avec pondération par catégorie et radar chart.                |
 | **Gamification**    | Mini-jeux (Curseur, Snake, Gravity Keyboard) intégrés au parcours.                    |
 | **Chatbot Idiot**   | "Chat'bruti" intégré avec réponses absurdes et prompts systémiques drôles.            |
 | **Anti-Ergonomie**  | Le "Cursor Challenge" force l'utilisateur à piloter un vaisseau au lieu d'une souris. |
 | **Easter Egg**      | Snake complet caché derrière le pseudo `sudo snake`.                                  |
-| **Thème Synthwave** | Design néon, grilles en perspective, effets CRT et scanlines.                         |
+| **Thème Retro** | Design néon, grilles en perspective, effets CRT et scanlines.                         |
 
 ---
 
