@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 import { Icons } from "@/components/icons/Icons";
 import { CategoryRadar } from "./CategoryRadar";
 import { clsx } from "clsx";
+import QRCode from "react-qr-code";
 
 export const IdCard = forwardRef(
 	({ results, username = "Résistant Anonyme", theme = "retro" }, ref) => {
@@ -142,10 +143,11 @@ export const IdCard = forwardRef(
 						/>
 					</div>
 
-					<div className="flex-1 flex items-center justify-center -ml-4">
+					<div className="flex-1 flex items-center justify-center -ml-4 max-h-[200px]">
 						<CategoryRadar
 							scores={categories}
 							theme={theme}
+							className="w-full h-full"
 						/>
 					</div>
 
@@ -156,9 +158,14 @@ export const IdCard = forwardRef(
 							Empreinte générée le {new Date().toLocaleDateString()}.
 						</div>
 
-						{/* QR Code Placeholder */}
+						{/* QR Code */}
 						<div className="bg-white p-1 rounded-sm">
-							<div className="w-10 h-10 bg-black opacity-20" />
+							<QRCode
+								value="https://nuit-info-2025.speakzy.fr/test"
+								size={40}
+								style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+								viewBox={`0 0 256 256`}
+							/>
 						</div>
 					</div>
 				</div>
