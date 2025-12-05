@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icons } from "@/components/icons/Icons";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function CursorChallenge({ onUnlock }) {
 	const [gameState, setGameState] = useState("playing"); // playing, success
@@ -125,15 +126,90 @@ export default function CursorChallenge({ onUnlock }) {
 			<div className="absolute inset-0 perspective-grid opacity-60" />
 			<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
 
-			{/* Instructions */}
-			<div className="absolute bottom-10 left-0 right-0 text-center pointer-events-none z-20">
-				<p className="text-cyan-400 text-sm animate-pulse mb-2">
+			{/* Instructions / Controls */}
+			<div className="absolute bottom-10 left-0 right-0 z-20 flex flex-col items-center gap-4 pointer-events-none">
+				<p className="text-cyan-400 text-sm animate-pulse text-center">
 					SYSTEM LOCKED // MANUAL OVERRIDE REQUIRED
 				</p>
-				<div className="flex justify-center gap-4 text-xs text-white/50">
+
+				{/* Desktop Instructions */}
+				<div className="hidden md:flex justify-center gap-4 text-xs text-white/50">
 					<span>[←/→] ROTATE</span>
 					<span>[Z] BOOST</span>
 					<span>[S] BRAKE</span>
+				</div>
+
+				{/* Mobile Touch Controls */}
+				<div className="flex md:hidden w-full px-8 justify-between items-end pointer-events-auto pb-4">
+					{/* Rotation Controls */}
+					<div className="flex gap-2">
+						<button
+							className="w-16 h-16 rounded-full border-2 border-cyan-500/50 bg-cyan-900/20 active:bg-cyan-500/40 text-cyan-400 flex items-center justify-center touch-manipulation backdrop-blur-sm"
+							onTouchStart={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, ArrowLeft: true }));
+							}}
+							onTouchEnd={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, ArrowLeft: false }));
+							}}
+							onMouseDown={() => setKeys((k) => ({ ...k, ArrowLeft: true }))}
+							onMouseUp={() => setKeys((k) => ({ ...k, ArrowLeft: false }))}
+						>
+							<ArrowLeft className="size-8" />
+						</button>
+						<button
+							className="w-16 h-16 rounded-full border-2 border-cyan-500/50 bg-cyan-900/20 active:bg-cyan-500/40 text-cyan-400 flex items-center justify-center touch-manipulation backdrop-blur-sm"
+							onTouchStart={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, ArrowRight: true }));
+							}}
+							onTouchEnd={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, ArrowRight: false }));
+							}}
+							onMouseDown={() => setKeys((k) => ({ ...k, ArrowRight: true }))}
+							onMouseUp={() => setKeys((k) => ({ ...k, ArrowRight: false }))}
+						>
+							<ArrowRight className="size-8" />
+						</button>
+					</div>
+
+					{/* Action Controls */}
+					<div className="flex flex-col gap-4">
+						<button
+							className="w-20 h-20 rounded-full border-2 border-green-500/50 bg-green-900/20 active:bg-green-500/40 text-green-400 flex flex-col items-center justify-center touch-manipulation backdrop-blur-sm"
+							onTouchStart={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, z: true }));
+							}}
+							onTouchEnd={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, z: false }));
+							}}
+							onMouseDown={() => setKeys((k) => ({ ...k, z: true }))}
+							onMouseUp={() => setKeys((k) => ({ ...k, z: false }))}
+						>
+							<span className="font-bold text-lg">BOOST</span>
+							<span className="text-[10px] opacity-60">Z</span>
+						</button>
+						<button
+							className="w-16 h-16 rounded-full border-2 border-red-500/50 bg-red-900/20 active:bg-red-500/40 text-red-400 flex flex-col items-center justify-center touch-manipulation backdrop-blur-sm self-end"
+							onTouchStart={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, s: true }));
+							}}
+							onTouchEnd={(e) => {
+								e.preventDefault();
+								setKeys((k) => ({ ...k, s: false }));
+							}}
+							onMouseDown={() => setKeys((k) => ({ ...k, s: true }))}
+							onMouseUp={() => setKeys((k) => ({ ...k, s: false }))}
+						>
+							<span className="font-bold">BRAKE</span>
+							<span className="text-[10px] opacity-60">S</span>
+						</button>
+					</div>
 				</div>
 			</div>
 

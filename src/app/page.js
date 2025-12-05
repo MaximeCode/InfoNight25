@@ -1,6 +1,6 @@
 "use client"
 
-import { Background } from "@/components/ui/Background";
+// import { Background } from "@/components/ui/Background";
 import { Hero } from "@/components/layout/Hero";
 import { useState } from "react";
 import CursorChallenge from "@/components/game/CursorChallenge";
@@ -14,7 +14,7 @@ export default function Home() {
         <CursorChallenge onUnlock={() => setUnlocked(true)} />
       ) : (
         <>
-          <Background />
+          {/* <Background /> */}
           <Hero />
         </>
       )}

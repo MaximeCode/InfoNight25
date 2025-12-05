@@ -4,9 +4,10 @@ import { Suspense, useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Background } from "@/components/ui/Background";
 import { Button } from "@/components/ui/Button";
-import { ResultGauge } from "@/components/game/ResultGauge";
 import { IdCard } from "@/components/game/IdCard";
 import { PseudoModal } from "@/components/game/PseudoModal";
+import { ChaosEmailModal } from "@/components/game/ChaosEmailModal";
+import { GoBackButton } from "@/components/ui/GoBackButton";
 import { toPng } from "html-to-image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -34,6 +35,7 @@ function ResultContent() {
     const [username, setUsername] = useState("Agent Anonyme");
     const [showModal, setShowModal] = useState(true);
     const [theme, setTheme] = useState("retro");
+    const [showEmailModal, setShowEmailModal] = useState(false);
 
     const downloadCard = async () => {
         if (cardRef.current === null) {
@@ -75,8 +77,8 @@ function ResultContent() {
                             key={t}
                             onClick={() => setTheme(t)}
                             className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${theme === t
-                                    ? 'bg-nird-gold text-black shadow-[0_0_15px_rgba(234,179,8,0.5)]'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-nird-gold text-black shadow-[0_0_15px_rgba(234,179,8,0.5)]'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             {t.charAt(0).toUpperCase() + t.slice(1)}
@@ -90,22 +92,34 @@ function ResultContent() {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="relative group"
+                        className="relative group w-full flex justify-center py-4 overflow-hidden"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-nird-gold to-nird-neon rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                        <IdCard ref={cardRef} results={results} username={username} theme={theme} />
+                        <div className="scale-[0.55] sm:scale-75 md:scale-100 origin-center transition-transform duration-300">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-nird-gold to-nird-neon rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                            <IdCard ref={cardRef} results={results} username={username} theme={theme} />
+                        </div>
                     </motion.div>
 
-                    <div className="flex gap-4">
-                        <Button onClick={downloadCard} disabled={isGenerating} variant="secondary">
-                            {isGenerating ? "Génération..." : "Télécharger ma Carte"}
+                    <div className="flex flex-col gap-4 w-full max-w-md">
+                        <div className="flex gap-4 w-full">
+                            <Button onClick={downloadCard} disabled={isGenerating} variant="secondary" className="flex-1">
+                                {isGenerating ? "Génération..." : "Télécharger ma Carte"}
+                            </Button>
+                            <Link href="/test">
+                                <Button variant="outline">Recommencer</Button>
+                            </Link>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            onClick={() => setShowEmailModal(true)}
+                            className="w-full text-nird-light/50 hover:text-nird-neon text-xs"
+                        >
+                            Envoyer par mail (Secure)
                         </Button>
-                        <Link href="/test">
-                            <Button variant="outline">Recommencer</Button>
-                        </Link>
                     </div>
                 </div>
             </div>
+            <ChaosEmailModal isOpen={showEmailModal} onClose={() => setShowEmailModal(false)} />
         </div>
     );
 }
@@ -114,6 +128,7 @@ export default function ResultPage() {
     return (
         <main className="min-h-screen relative">
             <Background />
+            <GoBackButton href="/" />
             <Suspense fallback={<div className="text-white text-center pt-20">Chargement...</div>}>
                 <ResultContent />
             </Suspense>
