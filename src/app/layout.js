@@ -20,6 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <link rel="icon" href="/favicon.ico" />
       <body
         className={`${outfit.variable} ${spaceMono.variable} antialiased text-nird-light overflow-x-hidden`}
       >
