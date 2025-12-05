@@ -1,6 +1,5 @@
 import { Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
-import { CrtEffect } from "@/components/ui/CrtEffect";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -22,9 +21,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${outfit.variable} ${spaceMono.variable} antialiased bg-nird-dark text-nird-light overflow-x-hidden`}
+        className={`${outfit.variable} ${spaceMono.variable} antialiased text-nird-light overflow-x-hidden`}
       >
-        <CrtEffect />
         {children}
       </body>
     </html>
