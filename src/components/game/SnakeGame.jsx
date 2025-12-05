@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trophy, RefreshCw, Play } from "lucide-react";
+import { Icons } from "@/components/icons/Icons";
 
 // --- Constants ---
 const GRID_SIZE = 19;
@@ -667,10 +668,84 @@ export default function SnakeGame({ onClose }) {
 						)}
 					</AnimatePresence>
 				</div>
-
-				{/* Scanlines Overlay */}
-				<div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[size:100%_2px] z-50 opacity-20" />
 			</div>
+
+			{/* Mobile Controls (D-Pad) */}
+			<div className="absolute bottom-4 left-0 right-0 z-30 flex flex-col items-center gap-2 md:hidden pointer-events-none">
+				<div className="flex gap-4 pointer-events-auto opacity-60 hover:opacity-100 transition-opacity">
+					{/* Up */}
+					<button
+						className="w-14 h-14 bg-cyan-500/20 border-2 border-cyan-500 rounded-lg flex items-center justify-center active:bg-cyan-500/50 backdrop-blur-sm"
+						onTouchStart={(e) => {
+							e.preventDefault();
+							if (directionRef.current.y === 0)
+								nextDirectionRef.current = { x: 0, y: -1 };
+						}}
+						onMouseDown={(e) => {
+							e.preventDefault();
+							if (directionRef.current.y === 0)
+								nextDirectionRef.current = { x: 0, y: -1 };
+						}}
+					>
+						<Icons.ArrowUp className="w-8 h-8 text-cyan-400" />
+					</button>
+				</div>
+				<div className="flex gap-14 pointer-events-auto opacity-60 hover:opacity-100 transition-opacity">
+					{/* Left */}
+					<button
+						className="w-14 h-14 bg-cyan-500/20 border-2 border-cyan-500 rounded-lg flex items-center justify-center active:bg-cyan-500/50 backdrop-blur-sm"
+						onTouchStart={(e) => {
+							e.preventDefault();
+							if (directionRef.current.x === 0)
+								nextDirectionRef.current = { x: -1, y: 0 };
+						}}
+						onMouseDown={(e) => {
+							e.preventDefault();
+							if (directionRef.current.x === 0)
+								nextDirectionRef.current = { x: -1, y: 0 };
+						}}
+					>
+						<Icons.ArrowLeft className="w-8 h-8 text-cyan-400" />
+					</button>
+					{/* Right */}
+					<button
+						className="w-14 h-14 bg-cyan-500/20 border-2 border-cyan-500 rounded-lg flex items-center justify-center active:bg-cyan-500/50 backdrop-blur-sm"
+						onTouchStart={(e) => {
+							e.preventDefault();
+							if (directionRef.current.x === 0)
+								nextDirectionRef.current = { x: 1, y: 0 };
+						}}
+						onMouseDown={(e) => {
+							e.preventDefault();
+							if (directionRef.current.x === 0)
+								nextDirectionRef.current = { x: 1, y: 0 };
+						}}
+					>
+						<Icons.ArrowRight className="w-8 h-8 text-cyan-400" />
+					</button>
+				</div>
+				<div className="flex gap-4 pointer-events-auto opacity-60 hover:opacity-100 transition-opacity">
+					{/* Down */}
+					<button
+						className="w-14 h-14 bg-cyan-500/20 border-2 border-cyan-500 rounded-lg flex items-center justify-center active:bg-cyan-500/50 backdrop-blur-sm"
+						onTouchStart={(e) => {
+							e.preventDefault();
+							if (directionRef.current.y === 0)
+								nextDirectionRef.current = { x: 0, y: 1 };
+						}}
+						onMouseDown={(e) => {
+							e.preventDefault();
+							if (directionRef.current.y === 0)
+								nextDirectionRef.current = { x: 0, y: 1 };
+						}}
+					>
+						<Icons.ArrowDown className="w-8 h-8 text-cyan-400" />
+					</button>
+				</div>
+			</div>
+
+			{/* Scanlines Overlay */}
+			<div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[size:100%_2px] z-50 opacity-20" />
 		</motion.div>
 	);
 }
